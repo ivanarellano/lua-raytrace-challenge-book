@@ -1,6 +1,6 @@
 require 'busted.runner'()
-require 'account'
-require 'special-account'
+require 'lua-tutorial.account'
+require 'lua-tutorial.special-account'
 
 
 describe("Test Account Class", function ()

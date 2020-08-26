@@ -1,4 +1,4 @@
-require 'account'
+require 'lua-tutorial.account'
 
 --[[
   Inheritance tutorial: http://lua-users.org/wiki/InheritanceTutorial
