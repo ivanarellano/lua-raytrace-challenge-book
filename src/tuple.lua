@@ -1,28 +1,44 @@
 Tuple = {
-    x = 0,
-    y = 0,
-    z = 0,
-    w = 0,
-    __add =  function (a, b)
-      return Tuple:new(a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w)
-    end,
+  x = 0,
+  y = 0,
+  z = 0,
+  w = 0,
   
-    __sub =  function (a, b)
-      return Tuple:new(a.x - b.x, a.y - b.y, a.z - b.z, a.w - b.w)
-    end
+  __add = function (a, b)
+    return Tuple:new(
+      a.x + b.x, a.y + b.y, 
+      a.z + b.z, a.w + b.w
+    )
+  end,
 
-  -- __tostring = function (self)
-  --   return "{" .. self.x .. ", " .. self.y .. ", "
-  --       .. self.z .. ", " .. self.w "}"
-  -- end
+  __sub = function (a, b)
+    local x = a.x - b.x
+    local y = a.y - b.y
+    local z = a.z - b.z
+    local w = a.w - b.w
+    
+    if w == 0 then
+      return Vector:new(x, y, z)
+    elseif w == 1 then
+      return Point:new(x, y, z)
+    else
+      return Tuple:new(x, y, z, w)
+    end
+  end,
+
+  __tostring = function (self)
+    return "{" .. self.x .. ", " .. self.y .. ", " 
+      .. self.z .. ", " .. self.w  .."}"
+  end
 }
 
 function Tuple:new(x, y, z, w)
-  local t = Tuple
-  t.x = x
-  t.y = y
-  t.z = z
-  t.w = w
+  local t = {
+    x = x or 0,
+    y = y or 0,
+    z = z or 0,
+    w = w or 0
+  }
 
   setmetatable(t, self)
   self.__index = self
@@ -41,13 +57,15 @@ end
 
 Point = {}
 function Point:new(x, y, z)
-  local t = Tuple
-  t.x = x
-  t.y = y
-  t.z = z
-  t.w = 1
+  local t = {
+    x = x or 0,
+    y = y or 0,
+    z = z or 0,
+    w = 1
+  }
 
-  setmetatable({}, t) -- Todo: Create Point MT
+  -- Todo: Create Point MT(?)
+  setmetatable(t, Tuple)
   self.__index = self
   return t
 end
@@ -58,13 +76,15 @@ end
 
 Vector = {}
 function Vector:new(x, y, z)
-  local t = Tuple
-  t.x = x
-  t.y = y
-  t.z = z
-  t.w = 0
+  local t = {
+    x = x or 0,
+    y = y or 0,
+    z = z or 0,
+    w = 0
+  }
 
-  setmetatable({}, t) -- Todo: Create Vector MT
+  -- Todo: Create Vector MT (?)
+  setmetatable(t, Tuple)
   self.__index = self
   return t
 end
