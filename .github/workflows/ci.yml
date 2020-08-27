@@ -25,20 +25,20 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install Lua and Luarocks
         run: |
-          sudo apt-get install lua5.4,
+          sudo apt-get install lua5.4
           sudo apt-get install luarocks
       
       - name: Install Rocks
         run: |
-          luarocks install busted,
-          luarocks install luacov,
+          luarocks install busted
+          luarocks install luacov
           luarocks install luacov-reporter-lcov
       
       - name: Run test and create coverage
         run: |
           busted,
-          luacov -r lcov,
-          mkdir ./coverage,
+          luacov -r lcov
+          mkdir ./coverage
           mv luacov.report.out ./coverage/lcov.info
       
       - name: Coveralls
