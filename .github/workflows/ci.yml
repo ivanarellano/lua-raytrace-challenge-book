@@ -25,7 +25,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install Lua and Luarocks
         run: |
-          sudo apt-get install lua5.4
+          sudo apt-get install lua5.3
           sudo apt-get install luarocks
       
       - name: Install Rocks
