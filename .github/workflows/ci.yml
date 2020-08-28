@@ -29,12 +29,13 @@ jobs:
           sudo apt-get install lua5.3
           sudo apt-get install liblua5.3-dev
           sudo apt-get install luarocks
+          source ~/.bashrc
       
       - name: Install Rocks
         run: |
-          luarocks install --local busted
-          luarocks install --local luacov
-          luarocks install --local luacov-reporter-lcov
+          luarocks install busted
+          luarocks install luacov
+          luarocks install luacov-reporter-lcov
       
       - name: Run test and create coverage
         run: |
