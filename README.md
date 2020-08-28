@@ -4,7 +4,8 @@
 This implementation is inspired by the book "The Ray Tracer Challenge" by Jamis Buck.
 
 ### Currently Working On
-- [ ] Chapter 1
+- [ ] Chapter 2
+- [x] Chapter 1
 - [x] Setup TDD environment using busted
 - [x] Setup CI using GitHub Actions
 - [x] Setup code coverage stats using Coveralls
