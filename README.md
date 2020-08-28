@@ -1,4 +1,4 @@
-![build status](https://github.com/{USERNAME}/{REPO}/workflows/{WORKFLOW}/badge.svg)
+![CI](https://github.com/ivanarellano/lua-raytrace-challenge-book/workflows/CI/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/ivanarellano/lua-raytrace-challenge-book/badge.svg?branch=master)](https://coveralls.io/github/ivanarellano/lua-raytrace-challenge-book?branch=master)
 # Ray Tracing in Lua
 The implementation in this book is inspired by the book "The Ray Tracer Challenge" by Jamis Buck.
