@@ -1,3 +1,7 @@
+# Test files
+.coverage
+lcov.info
+
 # Compiled Lua sources
 luac.out
 
