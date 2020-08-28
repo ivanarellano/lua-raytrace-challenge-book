@@ -25,14 +25,15 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install Lua and Luarocks
         run: |
-          sudo apt-get install lua5.3
-          sudo apt-get install luarocks
+          apt-get install build-essential libreadline-dev
+          apt-get install lua5.3
+          apt-get install luarocks
       
       - name: Install Rocks
         run: |
-          luarocks install --local busted
-          luarocks install --local luacov
-          luarocks install --local luacov-reporter-lcov
+          luarocks install busted
+          luarocks install luacov
+          luarocks install luacov-reporter-lcov
       
       - name: Run test and create coverage
         run: |
